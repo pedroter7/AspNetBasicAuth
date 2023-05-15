@@ -8,17 +8,17 @@ using System.Text.Encodings.Web;
 
 namespace PedroTer7.AspNetBasicAuth.Authentication
 {
-    public class BasicAuthenticationHandler<T,K>
-        : AuthenticationHandler<T> 
+    public class BasicAuthenticationHandler<T, K>
+        : AuthenticationHandler<T>
         where T : AuthenticationSchemeOptions, new()
         where K : new()
     {
         private readonly IUserCredentialsValidator _userCredentialsValidator;
-        private readonly IUserClaimsBuilder<K> _userClaimsBuilder;
+        private readonly IUserClaimsBuilder<K, T> _userClaimsBuilder;
 
         public BasicAuthenticationHandler(IOptionsMonitor<T> options,
             ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock,
-            IUserCredentialsValidator userCredentialsValidator, IUserClaimsBuilder<K> userClaimsBuilder)
+            IUserCredentialsValidator userCredentialsValidator, IUserClaimsBuilder<K, T> userClaimsBuilder)
                 : base(options, logger, encoder, clock)
         {
             _userCredentialsValidator = userCredentialsValidator;
@@ -56,7 +56,7 @@ namespace PedroTer7.AspNetBasicAuth.Authentication
                     return AuthenticateResult.Fail("Invalid username or password");
                 }
                 var userData = await _userClaimsBuilder.GetUserData(username);
-                var claims = _userClaimsBuilder.BuildClaims(userData);
+                var claims = _userClaimsBuilder.BuildClaims(userData, Options);
                 var identity = new ClaimsIdentity(claims);
                 var principal = new ClaimsPrincipal(identity);
                 var ticket = new AuthenticationTicket(principal, Scheme.Name);
