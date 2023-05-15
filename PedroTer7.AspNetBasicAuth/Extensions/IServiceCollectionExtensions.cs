@@ -5,7 +5,7 @@ using PedroTer7.AspNetBasicAuth.Authentication;
 
 namespace PedroTer7.AspNetBasicAuth.Extensions
 {
-    public static class IServiceCollectionExtensions
+    internal static class IServiceCollectionExtensions
     {
         internal static void RegisterBasicAuthenticationServices<T, K>(this IServiceCollection services, Type referenceType)
             where T : new()
