@@ -8,6 +8,12 @@ using System.Text.Encodings.Web;
 
 namespace PedroTer7.AspNetBasicAuth.Authentication
 {
+    /// <summary>
+    /// Authentication handler for basic authentication flow.
+    /// </summary>
+    /// <typeparam name="T">Type of the authentication scheme options model used for authentication.</typeparam>
+    /// <typeparam name="K">Type of the model that is used during user data retrieval 
+    /// after a successfull authentication.</typeparam>
     public class BasicAuthenticationHandler<T, K>
         : AuthenticationHandler<T>
         where T : AuthenticationSchemeOptions, new()

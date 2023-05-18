@@ -15,7 +15,7 @@ namespace PedroTer7.AspNetBasicAuth.Extensions
         /// </summary>
         /// <typeparam name="T">Data model used by the auth handler to retrieve
         /// user data after she has been successfully authenticated. This data model
-        /// must b the same as the one used when implementing 
+        /// must be the same as the one used when implementing 
         /// <see cref="IUserClaimsBuilder{T, K}"/>.</typeparam>
         /// <typeparam name="K">Schema options used to perform basic authentication
         /// by the <see cref="BasicAuthenticationHandler{T, K}"/>.</typeparam>
