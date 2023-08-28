@@ -11,6 +11,10 @@
 		<Description>Customizable basic authentication package for ASP.NET core using DI.</Description>
 		<PackageProjectUrl>https://github.com/pedroter7/AspNetBasicAuth</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/pedroter7/AspNetBasicAuth</RepositoryUrl>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>authentication;basic authentication;swagger;openapi</PackageTags>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -22,6 +26,17 @@
 		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
 			<_Parameter1>PedroTer7.AspNetBasicAuth.Tests</_Parameter1>
 		</AssemblyAttribute>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>
