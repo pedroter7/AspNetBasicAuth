@@ -1,16 +1,16 @@
-# A Basic Authentication Library for ASP.NET Core
+# A Basic Authentication Library for ASP.NET Core 🔐
 
 AspNetBasicAuth is a library that implements the basic authentication schema in asp.net core applications using dependency injection to customize credential authentication, perform user data retrieval and principal claims creation. The library also provides a method to configure the SwashBuckle generated OpenAPI specification to support the basic authentication.
 
-## Note on Security
+## Security Disclaimer ⚠️⚠️⚠️
 
-This library is intended for non-production use. In case you want to use this library in production environments, you are responsible for hardening and testing this authentication ensuring that it performs as intended.
+This library is intended for non-production use. In case you want to use this library in production environments, you are responsible for hardening and testing the authentication methods that this library provides ensuring that it performs as intended. If you really wish to use it in production, do it at your own risk.
 
-## Requirements
+## Requirements 📋
 
  - Enviornment: .NET 6.0+
 
-## Usage
+## Usage 👩‍💻
 
 In order to use the library it is necessary to provide the implementation of two interfaces:
 
@@ -53,7 +53,7 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 ```
 
-## API Reference
+## API Reference 📃
 
 ### IUserClaimsBuilder<T, K> interface
 
